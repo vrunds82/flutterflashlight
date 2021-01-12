@@ -7,7 +7,7 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:flashlight/flashlight.dart';
-import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+
 
 
 
@@ -82,19 +82,19 @@ class _MyApplightState extends State<MyApplight> {
                     Flashlight.lightOff();
 
                   },
-                    child: Neumorphic(
-                        style: NeumorphicStyle(
-                            shape: NeumorphicShape.concave,
-                            boxShape: NeumorphicBoxShape.circle(),
-                            depth: 01,intensity: 1,
-                            lightSource: LightSource.topLeft,
-                            shadowDarkColor: Colors.black,
-                         shadowDarkColorEmboss: Colors.black,
-                            color: Colors.white
+                    child: Card(
+                        color: Colors.black,
+                        elevation: 5,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                              bottomRight: Radius.circular(50),
+                              topRight: Radius.circular(50),
+                              bottomLeft:Radius.circular(50),
+                              topLeft: Radius.circular(50)),
                         ),
                         child:Padding(
                             padding: const EdgeInsets.all(30.0),
-                            child: Icon(Icons.stop,color: Colors.black,size: 40,)
+                            child: Icon(Icons.stop,color: Colors.white,size: 40,)
                         )
                     ),
                   ),
@@ -104,14 +104,15 @@ class _MyApplightState extends State<MyApplight> {
                   GestureDetector(onTap: (){
                     startTimer();
                   },
-                    child: Neumorphic(
-                        style: NeumorphicStyle(
-                            shape: NeumorphicShape.concave,
-                            boxShape: NeumorphicBoxShape.circle(),
-                            depth: 1,intensity: 1,
-                            lightSource: LightSource.topLeft,
-                            color: Colors.black
-                        ),
+                    child: Card(color: Colors.black,
+                        elevation: 5,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                                bottomRight: Radius.circular(50),
+                                topRight: Radius.circular(50),
+                            bottomLeft:Radius.circular(50),
+                            topLeft: Radius.circular(50)),
+                            ),
                         child:Padding(
                             padding: const EdgeInsets.all(30.0),
                             child: Icon(Icons.highlight,size: 40,color: Colors.white,)
